@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# prod environment. Tags are rewritten by Kargo when Freight is promoted from qa
+# (prod promotion is manually gated).
+namespace: prod
+
+resources:
+  - ../../base
+
+images:
+  - name: ghcr.io/jmgilman/backend
+    newTag: "0.3.0"
+  - name: ghcr.io/jmgilman/frontend
+    newTag: "0.1.0"

@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Shared, environment-agnostic resources for the pastebin app. Each environment
+# overlay (envs/dev|qa|prod) sets the namespace and pins the image tags.
+resources:
+  - backend.yaml
+  - frontend.yaml
