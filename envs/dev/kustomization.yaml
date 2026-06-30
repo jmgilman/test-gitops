@@ -10,6 +10,6 @@ resources:
 
 images:
   - name: ghcr.io/jmgilman/backend
-    newTag: "0.3.0"
+    newTag: "0.4.0"
   - name: ghcr.io/jmgilman/frontend
-    newTag: "0.1.0"
+    newTag: "0.2.0"
