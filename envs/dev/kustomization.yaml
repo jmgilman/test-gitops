@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# dev environment. Kargo's promotion step (`kustomize edit set image`) rewrites
+# the tags below when new Freight is promoted into the dev Stage.
+namespace: dev
+
+resources:
+  - ../../base
+
+images:
+  - name: ghcr.io/jmgilman/backend
+    newTag: "0.4.0"
+  - name: ghcr.io/jmgilman/frontend
+    newTag: "0.2.0"
